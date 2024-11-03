@@ -11,7 +11,7 @@ rec_mes = messages[messages['Sent by Me'] == 0]
 group_chats = messages[messages['Group Chat'] == 1]
 individual_messages = messages[messages['Group Chat'] == 0]
 
-if False: # time activity analysis
+if True: # time activity analysis
     if True: # lifetime activity analysis
         groupingsize = 10
         sent_counts = sent_mes.set_index('Readable Time').resample(f'{groupingsize}D').size()
@@ -97,7 +97,7 @@ if False: # time activity analysis
             plt.tight_layout()
             plt.show()
 
-if False: # GC analysis
+if True: # GC analysis
     topnumGC = 30
     group_chat_counts = group_chats['Group Chat Name'].value_counts().head(topnumGC)
     print(group_chat_counts)
